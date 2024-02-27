@@ -18,6 +18,7 @@ setup(
   download_url='https://github.com/greenlsi/edwar/archive/v_092.tar.gz',
   keywords=['EDA', 'RECOVERY', 'SIGNAL'],   # Keywords that define your package best
   install_requires=[
+          'cvxopt == 1.2.6', 
           'numpy',
           'pandas',
           'matplotlib',
@@ -28,7 +29,6 @@ setup(
           'scipy',          
           'mysql-connector-python',
           'ledapy',
-          'cvxopt == 1.2.6', 
           'scikit-learn',
           'joblib'
   ], # 'mysql' used to be neceessary
