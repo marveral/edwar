@@ -8,16 +8,16 @@ setup(
   packages=find_packages(),   # Chose the same as "name"
   version='1.0',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license
-  include_package_data=True,
+  include_package_data=False,
   description='signal Error Detection for WBSN And data1 Recovery',   # Give a short description about your library
   long_description=long_description,
   long_description_content_type="text/markdown",
   author='Miguel Merino',                   # Type in your name
   author_email='miguel_dreimal_30@hotmail.com',      # Type in your E-Mail
   url='https://github.com/greenlsi/edwar',   # Provide either the link to your github or to your website
-  download_url='https://github.com/greenlsi/edwar/archive/v_092.tar.gz',
   keywords=['EDA', 'RECOVERY', 'SIGNAL'],   # Keywords that define your package best
   install_requires=[
+          'cvxopt == 1.2.6', 
           'numpy',
           'pandas',
           'matplotlib',
@@ -28,7 +28,6 @@ setup(
           'scipy',          
           'mysql-connector-python',
           'ledapy',
-          'cvxopt == 1.2.6', 
           'scikit-learn',
           'joblib'
   ], # 'mysql' used to be neceessary
