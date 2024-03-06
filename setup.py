@@ -14,7 +14,7 @@ setup(
   long_description_content_type="text/markdown",
   author='Miguel Merino',                   # Type in your name
   author_email='miguel_dreimal_30@hotmail.com',      # Type in your E-Mail
-  url='https://github.com/marveral/edwar',   # Provide either the link to your github or to your website
+  url='https://github.com/greenlsi/edwar',   # Provide either the link to your github or to your website
   keywords=['EDA', 'RECOVERY', 'SIGNAL'],   # Keywords that define your package best
   install_requires=[
           'cvxopt == 1.2.6', 
