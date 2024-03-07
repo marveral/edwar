@@ -18,18 +18,18 @@ setup(
   keywords=['EDA', 'RECOVERY', 'SIGNAL'],   # Keywords that define your package best
   install_requires=[
           'cvxopt == 1.2.6', 
-          'numpy',
-          'pandas',
-          'matplotlib',
-          'datetime',
-          'configparser',
-          'pycryptodome',
-          'PyWavelets',
-          'scipy',          
-          'mysql-connector-python',
-          'ledapy',
-          'scikit-learn',
-          'joblib'
+          'configparser==6.0.1',
+          'datetime==5.4',
+          'joblib==1.3.2'
+          'ledapy==1.2.1',
+          'matplotlib==3.7.5',
+          'mysql-connector-python==8.3.0',
+          'numpy==1.24.4',
+          'pandas==2.0.3',
+          'pycryptodome==3.20.0',
+          'PyWavelets==1.4.1',
+          'scipy==1.10.1',          
+          'scikit-learn==1.3.2',
   ], # 'mysql' used to be neceessary
   classifiers=[
     'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the
