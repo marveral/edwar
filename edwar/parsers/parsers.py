@@ -42,22 +42,6 @@ class Parser(ABC):
     def run(self, data):
         pass
 
-
-class EDAparser(Parser):
-    def __init__(self):
-        super().__init__(inputs={'EDA': 'uS'},  # optional_inputs={'ACCx': 'g', 'ACCy': 'g', 'ACCz': 'g'},
-                         outputs={'EDA': 'uS', 'SCL': 'uS', 'SCR': 'uS'})
-
-    def run(self, data):
-        self.check_input(self.__class__.__name__, data, self.inputs, self.optional_inputs)
-        if not isinstance(EDA_CLASSIFIER, list):
-            raise TypeError('EDA_CLASSIFIER must be a list')
-        elif not ('Binary' or 'Multiclass') in EDA_CLASSIFIER:
-            raise ValueError('EDA_CLASSIFIER must be Binary or Multiclass')
-        eda_processed = process_eda(data[0], EDA_CLASSIFIER)
-        return eda_processed
-
-
 class ACCparser(Parser):
     def __init__(self):
         super().__init__(inputs={'x': 'g', 'y': 'g', 'z': 'g'},
