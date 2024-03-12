@@ -87,14 +87,6 @@ class IBIparser(Parser):
         return [ibi, hr]
 
 
-class TEMPparser(Parser):
-    def __init__(self):
-        super().__init__(inputs={'TEMP': 'ºC'}, outputs={'TEMP': 'ºC'})
-
-    def run(self, data):
-        self.check_input(self.__class__.__name__, data, self.inputs, self.optional_inputs)
-        out = self.adapt_input(data)
-        return out
 
 
 class STRESSparser(Parser):

@@ -27,8 +27,8 @@ class FeaturesExtractor:
         """ Method to extract specified features from the data in certain time window
 
         Args:
-            window_size (int): Seconds to window the data
-            window_overlap (int): Seconds to overlap the windows
+            window_size (float): Seconds to window the data
+            window_overlap (float): Seconds to overlap the windows
             features2extract (list): List of features to extract
 
         Raises:
@@ -72,20 +72,25 @@ class example(FeaturesExtractor):
 
 
     # @preprocessing
-    def count(self,window_size,window_overlap):
-        return self.data.count()
+    def sum(self,window_size,window_overlap):
+        window_size = int(window_size/self.fs)
+        window_step = int((window_size - window_overlap) / self.fs)
+        stats2apply = ['mean','std','median','var','min','max'] 
+        output = self.data.rolling(window_size,step=window_step).sum()
+        return output
 
 import numpy as np 
 data= pd.DataFrame(dict(a=np.zeros(10),b=np.arange(10)),
                    index= pd.date_range("2018-01-01", periods=10, freq="s"))
+
+fe = example(data,fs=1)
+r = fe.run(2,1,['statistics','sum'])
+
+
 fe = FeaturesExtractor(data,fs=1)
 r = fe.run(2,0,['statistics'])
 
-fe = example(data,fs=1)
-r = fe.run(2,0,['statistics','count'])
-
 fe = FeaturesExtractor(data,fs=1)
-r = fe.run(2,0,['statistics','count'])
+r = fe.run(2,0,['statistics','sum'])
 print(r)
 '''
-
